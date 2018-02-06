@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<head>
-  <title>HTML5 Audio Tutorial</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="http://code.jQuery.com/jQuery-latest.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/js.js"></script>
-    <script type="text/javascript" src="js/html5slider.js"></script>
-</head>
+<html>
+    <head>
+        <title>Comandos - Git Bash</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+    <body>
+        <h1 class="git">Comandos - Git Bash</h1>
 
-<body>
- 
-   <h2>Remover o usuário da sessão</h2>
+        <h2>Remover o usuário da sessão</h2>
+        <code>git config --global --remove-section user.name='test user'</code><br>
+        <code>git config --global --remove-section user.name="test user"</code><br>
+        <code>git config --global --remove-section user.name=test user</code><br>
+        <code>git config --global --remove-section user.name</code><br>
+        <code>git config --global --remove-section test user</code><br>
 
-git config --global --remove-section user.name='test user'<br>
-git config --global --remove-section user.name="test user"<br>
-git config --global --remove-section user.name=test user<br>
-git config --global --remove-section user.name<br>
-git config --global --remove-section test user<br>
-
-</body>
+        <h2>Remover usuário global de um repositório</h2>
+        <code>git config --global --unset-all user.name</code><br>
+        <code>git config --global --unset-all user.email</code>
+    </body>
 </html>
