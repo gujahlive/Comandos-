@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500|Roboto:300');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    width: 100%;
+    margin: 0;
+}
+
+h1 {
+    width: 100%;
+    margin: 0 auto auto auto;
+}
+
+h1, h2 {
+    font-family: 'Raleway', 'Segoe UI', sans-serif;
+}
+
+h1.git {
+    background-color: #dd4949;
+}
