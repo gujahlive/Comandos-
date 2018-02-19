@@ -1,6 +1,4 @@
-#include<stdio.h>
-main(){
-/*	Muita gente não sabe, mas é possível desligar o Windows através de um comando, em que se pode programar até em quanto tempo o computador deve desligar. o comando shutdown dispõe das seguintes opções:
+Muita gente não sabe, mas é possível desligar o Windows através de um comando, em que se pode programar até em quanto tempo o computador deve desligar. o comando shutdown dispõe das seguintes opções:
 Simular uma campanha
 PUBLICIDADE
 
@@ -22,10 +20,4 @@ shutdown -a
 
 O número 600, é quantidade de segundos, 10minutosx60. ele trabalha apenas com segundos, por isso fica dessa forma.
 
-Para testar estes comandos é só ir em iniciar/executar e digitar o comando.*/
-
-
-	printf("vou desligar em 5 minutos");
-	system("shutdown -s -t 300 ");// ver depois se posso passar o comando por parametro, ou então fazer um switch case;
-	
-}
+Para testar estes comandos é só ir em iniciar/executar e digitar o comando.

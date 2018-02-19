@@ -1,0 +1,9 @@
+pessoal, tenho uma rede domestica em Workgroup e já utilizei o comando sem problemas...
+
+Particularidades, possuo a mesma conta nos 2 micros com a mesma senha, inclusive.
+usei o comando "shutdown -s -m \\nomedamaquina"
+vc também pode usar: {runas /user:administrador "shutdown -s -m \\nomedamaquina" }
+
+Pedirá a senha de administrador, ou vc pode usar outra conta que possua em ambos os micros com a mesma senha.
+
+Espero ter ajudado.
