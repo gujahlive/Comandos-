@@ -70,8 +70,6 @@ int Menu (){
 }
 
 
-
-
 main(){
 	
 	setlocale(LC_ALL,"Portuguese");
