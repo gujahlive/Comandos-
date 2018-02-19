@@ -1,7 +1,9 @@
 #include<stdio.h>
 #include<locale.h>
+#include<string.h>
 int Menu (){
 	int e, SegDigitados,i;
+	char comando[25],Segundos[25];
 	printf("1 - desligar em 1 minuto.\t");
 	printf("2 - desligar em 2 minutos.\n");
 	printf("3 - desligar em 3 minutos.\t");
@@ -40,11 +42,12 @@ int Menu (){
 		} else printf("Agendamento Mantido\n");*/
 		break;
 	case 6 : 
-		///int SegDigitados;
 		printf("\ndigite em SEGUNDOS,\nquanto tempo você quer que a maquina desligue: ");
 		scanf("%d",&SegDigitados);
-		printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
-		system("shutdown -s -t SegDigitados");
+	//	Comando = "shutdown -s -t ";
+	//	printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
+		
+	//	system(Comando);
 		
 		break;
 		
@@ -57,8 +60,10 @@ int Menu (){
 		system("shutdown -s");
 		break;
 	case 9 :
-		printf("vou hibernei :)");
-		system("shutdown -h");
+		fflush(stdin);
+		printf("Escreva o comando:\n");
+		gets(comando);
+		system(comando);
 		break;
 	case 10 :
 		printf("Agendamento Cancelado :(");
@@ -68,6 +73,8 @@ int Menu (){
 	}
 	
 }
+// fgets (str, 256, stdin); (Variavel, limite, entrada por teclado)
+
 
 
 main(){
@@ -95,5 +102,4 @@ main(){
 	
 	}
 
-	
 }
