@@ -4,7 +4,8 @@ main(){
 	
 	setlocale(LC_ALL,"Portuguese");
 	
-	int e, SegDigitados;
+	int e, SegDigitados,i;
+	char decisao;
 	
 	printf("1 - desligar em 1 minuto.\n");
 	printf("2 - desligar em 2 minutos.\n");
@@ -36,6 +37,11 @@ main(){
 	case 5 :
 		printf("vou desligar em 5 minutos");
 		system("shutdown -s -t 300 ");
+		/*printf("Deseja Cancelar?\nS - SIM   N - NÃO     M - Voltar ao Menu\n: ");
+		scanf("%c",&decisao);
+		if(decisao == 's' || decisao == 'S'){
+			system ("shutdown -a");
+		} else printf("Agendamento Mantido\n");*/
 		break;
 	case 6 : 
 		///int SegDigitados;
@@ -50,6 +56,14 @@ main(){
 		break;
 	default:printf("Opção incorreta!\n");
 	}
+	
+	
+	printf("Deseja Cancelar?\n1 - SIM   2 - NÃO     3 - Voltar ao Menu\n:");
+	scanf("%d",&i);
+	if(i == 1 ){
+			system ("shutdown -a");
+			printf("Agendamento Cancelado :(\n");
+		} else printf("Agendamento Mantido\n");
 	
 	
 }
