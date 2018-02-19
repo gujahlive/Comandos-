@@ -13,26 +13,31 @@ int Menu (){
 	printf("7 - HIBERNAR.\t                ");
 	printf("8 - DESLIGAR AGORA.\n");
 	printf("9 - ESCREVA O COMANDO.\t        ");
-	printf("10 - CANCELAR AGEDAMENTO.\n\nESCOLHA:");
+	printf("10 - CANCELAR AGEDAMENTO.\n\nESCOLHA: ");
 	scanf("%d",&e);
 	switch(e){
 	case 1 :
+		system("color 01");
 		printf("vou desligar em 1 minuto.");
 		system("shutdown -s -t 60 ");
 		break;
 	case 2 :
+		system("color 02");
 		printf("vou desligar em 2 minutos");
 		system("shutdown -s -t 120 ");
 		break;
 	case 3 :
+		system("color 03");
 		printf("vou desligar em 3 minutos");
 		system("shutdown -s -t 180 ");
 		break;
 	case 4 :
+		system("color 04");
 		printf("vou desligar em 4 minutos");
 		system("shutdown -s -t 240 ");
 		break;
 	case 5 :
+		system("color 05");
 		printf("vou desligar em 5 minutos");
 		system("shutdown -s -t 300 ");
 		/*printf("Deseja Cancelar?\nS - SIM   N - NÃO     M - Voltar ao Menu\n: ");
@@ -45,11 +50,11 @@ int Menu (){
 		printf("\ndigite em SEGUNDOS,\nquanto tempo você quer que a maquina desligue: ");
 		scanf("%d",&SegDigitados);
 		
-	    Comando[] = "shutdown -s -t " ;
-	    strcat(Comando, SegDigitados);
+	    ///Comando[] = "shutdown -s -t " ;
+	   // strcat(Comando, SegDigitados);
      	printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
 		
-		system(Comando);
+		//system(Comando);
 		
 		break;
 		
@@ -68,6 +73,7 @@ int Menu (){
 		system(comando);
 		break;
 	case 10 :
+		system("color 10");
 		printf("Agendamento Cancelado :(");
 		system("shutdown -a");
 		break;
@@ -89,8 +95,7 @@ main(){
 	printf(Menu());
 	
 	if (e != 10){
-		
-			printf("Deseja Cancelar?\n1 - SIM   2 - NÃO     3 - Voltar ao Menu\n:");
+			printf("Deseja Cancelar?\n1 - SIM   2 - NÃO     3 - Voltar ao Menu\nEscolha: ");
 	scanf("%d",&i);
 	if(i == 1 ){
 			system ("shutdown -a");
