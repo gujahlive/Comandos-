@@ -3,7 +3,7 @@
 #include<string.h>
 int Menu (){
 	int e, SegDigitados,i;
-	char comando[25],Segundos[25];
+	char comando[25],Segundos[25],totalComando[25];
 	printf("1 - desligar em 1 minuto.\t");
 	printf("2 - desligar em 2 minutos.\n");
 	printf("3 - desligar em 3 minutos.\t");
@@ -44,10 +44,12 @@ int Menu (){
 	case 6 : 
 		printf("\ndigite em SEGUNDOS,\nquanto tempo você quer que a maquina desligue: ");
 		scanf("%d",&SegDigitados);
-	//	Comando = "shutdown -s -t ";
-	//	printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
 		
-	//	system(Comando);
+	    Comando[] = "shutdown -s -t " ;
+	    strcat(Comando, SegDigitados);
+     	printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
+		
+		system(Comando);
 		
 		break;
 		
