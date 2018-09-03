@@ -1,21 +1,19 @@
 #include<stdio.h>
 #include<locale.h>
-main(){
-	
-	setlocale(LC_ALL,"Portuguese");
-	
+#include<string.h>
+int Menu (){
 	int e, SegDigitados,i;
-	char decisao;
-	
-	printf("1 - desligar em 1 minuto.\n");
+	char comando[25],Segundos[25],Comando[2];
+	printf("1 - desligar em 1 minuto.\t");
 	printf("2 - desligar em 2 minutos.\n");
-	printf("3 - desligar em 3 minutos.\n");
+	printf("3 - desligar em 3 minutos.\t");
 	printf("4 - desligar em 4 minutos.\n");
-	printf("5 - desligar em 5 minutos.\n");
+	printf("5 - desligar em 5 minutos.\t");
 	printf("6 - Escolher quantos minutos.\n");
-	printf("7 - HIBERNAR.\n");
+	printf("7 - HIBERNAR.\t                ");
 	printf("8 - DESLIGAR AGORA.\n");
-	printf("9 - ESCREVA O COMANDO.\n:");
+	printf("9 - ESCREVA O COMANDO.\t        ");
+	printf("10 - CANCELAR AGEDAMENTO.\n\nESCOLHA:");
 	scanf("%d",&e);
 	switch(e){
 	case 1 :
@@ -44,26 +42,64 @@ main(){
 		} else printf("Agendamento Mantido\n");*/
 		break;
 	case 6 : 
-		///int SegDigitados;
-		printf("digite em SEGUNDOS, quanto tempo você quer que a maquina desligue");
+		printf("\ndigite em SEGUNDOS,\nquanto tempo você quer que a maquina desligue: ");
 		scanf("%d",&SegDigitados);
-		printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
+	    strcpy(Comando[0],"shutdown -s -t ");
+	    printf("A Maquina Será Desligada em %d Segundos\n",SegDigitados);
+		strcpy(Comando[1],SegDigitados);
+		system(Comando);
+		
 		break;
 		
 	case 7 :
 		printf("vou hibernei :)");
 		system("shutdown -h");
 		break;
+	case 8 :
+		printf("vou desliguei :)");
+		system("shutdown -s");
+		break;
+	case 9 :
+		fflush(stdin);
+		printf("Escreva o comando:\n");
+		gets(comando);
+		system(comando);
+		break;
+	case 10 :
+		printf("Agendamento Cancelado :(");
+		system("shutdown -a");
+		break;
 	default:printf("Opção incorreta!\n");
 	}
 	
+}
+// fgets (str, 256, stdin); (Variavel, limite, entrada por teclado)
+
+
+
+main(){
 	
-	printf("Deseja Cancelar?\n1 - SIM   2 - NÃO     3 - Voltar ao Menu\n:");
+	setlocale(LC_ALL,"Portuguese");
+	
+	int e, SegDigitados,i;
+	char decisao;
+	
+	Menu();
+	
+	if (e != 10){
+		
+			printf("Deseja Cancelar?\n1 - SIM   2 - NÃO     3 - Voltar ao Menu\n:");
 	scanf("%d",&i);
 	if(i == 1 ){
 			system ("shutdown -a");
 			printf("Agendamento Cancelado :(\n");
-		} else printf("Agendamento Mantido\n");
+		} else if(i == 3){
+			 Menu();
+
+			
+		}else printf("Agendamento Mantido\n");
 	
 	
+	}
+
 }

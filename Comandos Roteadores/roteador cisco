@@ -1,0 +1,201 @@
+Configurando senha da console.
+
+Router>enable
+
+Router#configure terminal
+
+Router(config)#line console 0
+
+Router(config-line)#password ti-redes
+
+ 
+
+Configurando acesso telnet para 05 usuários.
+
+Router>enable
+
+Router#configure terminal
+
+Router(config)#line vty 0 4
+
+Router(config-line)#login
+
+Router(config-line)#password ti-redes
+
+ 
+
+Configurando IP na interface ethernet.
+
+Router>enable
+
+Router#configure terminal
+
+Router(config)#interface ethernet 0/1
+
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+
+Router(config-if)#no shutdown
+
+ 
+
+Configurando IP na interface fastethernet.
+
+Router>enable
+
+Router#configure terminal
+
+Router(config)#interface fastEthernet 0/1
+
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+
+Router(config-if)#no shutdown
+
+ 
+
+Configurando IP na interface serial.
+
+Router>enable
+
+Router#configure terminal
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+
+Router(config-if)#clock rate 128000 (somente se a serial for DCE)
+
+Router(config-if)#no shutdown
+
+ 
+
+Configurando roteamento RIP v1.
+
+Router#
+
+configure terminal
+
+Router(config)#router rip
+
+Router(config-router)#network 192.168.1.0
+
+Router(config-router)#network 10.0.0.0
+
+ 
+
+Configurando uma rota default por ip do próximo salto.
+
+Router#configure terminal
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 192.168.1.1
+
+ 
+
+Configurando rota default por interface.
+
+Router#configure terminal
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 serial 0/1/0
+
+ 
+
+Configurando rota estática por ip do próximo salto.
+
+Router#configure terminal
+
+Router(config)#ip route 192.168.0.0 255.255.255.0 192.168.1.1
+
+ 
+
+Configurando rota estática por interface.
+
+Router#configure terminal
+
+Router(config)#ip route 192.168.0.0 255.255.255.0 serial 0/0
+
+ 
+
+Configurando roteamento entre vlans.
+
+Router>enable
+
+Router#configure terminal
+
+Router(config)#interface fastEthernet 0/1
+
+Router(config-if)#no shutdown
+
+Router(config-if)#exit
+
+Router(config)#interface fastEthernet 0/0.1     (ID da sub-interface)
+
+Router(config-subif)#encapsulation dot1Q 10 (ID da vlan)
+
+Router(config-subif)#ip address 192.168.1.1 255.255.255.0
+
+Router(config-subif)#exit
+
+Router(config)#interface fastEthernet 0/0.2     (ID da sub-interface)
+
+Router(config-subif)#encapsulation dot1Q 20 (ID da vlan)
+
+Router(config-subif)#ip address 192.168.2.1 255.255.255.0
+
+ 
+
+Comandos de verificação e diagnóstico.
+
+Router#show ?
+
+(O comando show ? fornece uma lista dos comandos show disponíveis)
+
+ 
+
+Router#show arp
+
+(Exibe a tabela ARP do roteador)
+
+ 
+
+Router#sh interfaces
+
+(Verifica detalhadamente as configurações das interfaces)
+
+ 
+
+Router#sh ip interface brief
+
+(Verifica resumidamente as configurações das interfaces)
+
+ 
+
+Router#sh ip route
+
+(Verifica a tabela de roteamento)
+
+ 
+
+Router#sh running-config
+
+(Verifica as configirações ativas na RAM)
+
+ 
+
+Router#sh startup-config
+
+(Verifica as configurações da NVRAM)
+
+ 
+
+Router#sh flash:
+
+(Verifica os arquivos de sistema operacional da Flash)
+
+ 
+
+Router#copy running-config startup-config
+
+(Salva as configurações ativas na RAM para a NVRAM)
+
+
+
+Ler mais: https://ti-redes.webnode.com.br/configuracoes-basicas/comandos-basicos-roteadores-cisco/
